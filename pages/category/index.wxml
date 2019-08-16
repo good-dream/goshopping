@@ -1,2 +1,49 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+
+<view>
+    <!-- 搜索 -->
+  <view class='search'>
+    <view class='search-input'>
+      <icon type='search' size='16' />搜素
+    </view>
+  </view>
+
+  <!-- 分类页内容 -->
+  <view class="main">
+    <!-- 左侧菜单栏 -->
+    <view class='navs'>
+      <view 
+      class="navs-item {{index===current?'active':''}}"
+      wx:for="{{navs}}" 
+      wx:key="{{index}}"
+      bindtap="handleChange"
+      data-index="{{index}}">
+        {{item.cat_name}}
+      </view>
+    </view>
+
+    <!-- 品牌的列表，点击的时候切换数据 -->
+    <view class='categorys'>
+      <view 
+      class="categorys-row"
+      wx:for=""
+      wx:key="{{index}}">
+        <!-- 标题 -->
+        <view class="categorys-title">
+          <text>/</text>
+          {{item.cat_name}}
+          <text>/</text>
+        </view>
+
+        <!-- 品牌 -->
+        <view class="categorys-list">
+        
+        </view>
+      </view>
+    </view>
+  
+  
+  </view>
+
+</view>
+
+
