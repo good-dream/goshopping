@@ -1,4 +1,6 @@
-// pages/category/index.js
+import request from '../../utils/request.js'
+
+
 Page({
 
   /**
@@ -13,8 +15,19 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    
+  onLoad: function () {
+    // 请求左侧菜单栏数据
+    request({
+      url:'/categories'
+    }).then(res=>{
+      console.log(res)
+      // 结构出需要渲染的数据
+      const {message}=res.data;
+
+      this.setData({
+        navs:message
+      })
+    })
   },
 
   // 导航栏点击时触发

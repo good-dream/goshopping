@@ -11,6 +11,8 @@
   <view class="main">
     <!-- 左侧菜单栏 -->
     <view class='navs'>
+      <!-- bindtap为绑定事件 -->
+      <!-- data-index=index 想传入index这个参数 -->
       <view 
       class="navs-item {{index===current?'active':''}}"
       wx:for="{{navs}}" 
@@ -21,7 +23,7 @@
       </view>
     </view>
 
-    <!-- 品牌的列表，点击的时候切换数据 -->
+    <!-- 品牌的列表(右侧)，点击的时候切换数据 -->
     <view class='categorys'>
       <view 
       class="categorys-row"
