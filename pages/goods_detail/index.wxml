@@ -1,0 +1,19 @@
+
+  <swiper 
+  class="swiper"
+  indicator-dots
+  >
+  <!-- block是一个伪元素，不会渲染到页面的，一般用于for循环 -->
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+      <!-- model=aspectFill 为自动截取图片的长边 -->
+        <image 
+        src="{{item}}" 
+        class="slide-image" 
+        mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  

@@ -1,21 +1,100 @@
-
-.search {
-  padding:20rpx;
-  background:#ff2d4a;
+/* 固定了container的高度为100% */
+.container {
+  position:absolute;
+  width:100%;
+  top:0;
+  bottom:0;
 }
-
-.search-input {
-  height:60rpx;
-  font-size:14px;
-  color:#666;
+/* 继承了container的高度，设置定位为相对定位 */
+.main {
+  position:relative;
+  height:100%;
+  /* padding:20rpx; */
   display:flex;
-  justify-content: center;
-  align-items:center;
-  border-radius:5px;
+  justify-content:space-between;
+}
+/* 菜单栏布局，高度继承main，为了出现滚动条，需要脱离标准流 */
+.main .navs {
+  position:absolute;
+  left:0;top:0;
+  width:200rpx;
+  height:100%;
+  overflow:scroll;
+  background:#f6f6f6;
+
+}
+
+.navs-item {
+  height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+  box-sizing:border-box;
+  border-bottom:1px solid #eee;
+}
+/* 当点击高亮之后的类 */
+.navs .active {
+  color:red;
   background:#fff;
+  position:relative;
 }
-.search-input icon {
-  margin-right:10px;
+.navs .active::before {
+  display:block;
+  content:"";
+  width:4px;
+  height:60rpx;
+  background:red;
+  position:absolute;
+  top:20rpx;
+  left:0;
 }
 
+/* 品牌列表样式 */
+/* 品牌栏的布局，高度继承main的高度100%，为了出现滚动条则需要用定位脱离标准流 */
+/* 超出高度给出滚动条  overflow:scroll */
+.categorys {
+  position:absolute;
+  left:200rpx;
+  right:0;
+  height:100%;
+  overflow:scroll; 
+  flex:1;
+  padding:20rpx;
+  box-sizing:border-box;
+}
 
+.categorys-row {
+  padding:0 20rpx;
+}
+.categorys-title{
+  text-align:center;
+  margin:20rpx 0;
+}
+.categorys-title text {
+  margin:0 20rpx;
+  color:#eee;
+}
+.categorys-list {
+  display:flex;
+  flex-wrap: wrap;
+}
+.categorys-item {
+  width:33.33%;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  font-size: 14px;
+  color:#666;
+  margin-bottom:10rpx;
+}
+.categorys-item image {
+  width:120rpx;
+  height:120rpx;
+}
+/* 让图片的下面的文字出现超出盒子宽度时，以省略号来表示 */
+.categorys-item > item {
+  text-align: center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

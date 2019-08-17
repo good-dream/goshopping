@@ -1,0 +1,10 @@
+/* 搜索头部样式 */
+.search {
+  padding:20rpx;
+  background:#eee;
+}
+
+.search-input {
+  background:#fff;
+}
+

@@ -1,0 +1,46 @@
+
+<!-- 搜索栏 -->
+<view class="search">
+  <view class="search-input">
+    <icon type="search" size="16"></icon>
+    小米
+  </view>
+</view>
+
+<!-- tab栏 -->
+<view>
+  <view 
+  class="tabs {{current==index?'active':''}}"
+  wx:for="{{['综合','销量','价格']}}"
+  wx:key="{{index}}"
+  bindtap='handleChange'
+  data-index='{{index}}'>
+    {{item}}
+  </view>
+</view>
+
+<!-- 商品列表 -->
+<view class="">
+
+  <!-- 单个商品 -->
+  <view>
+    <!-- navigator 相当于a标签(url) -->
+    <navigator 
+    url=""
+    wx:for="{{goods}}"
+    wx:key="{{index}}"
+    bindtap="">
+      <image class="goods-pic"></image>
+
+      <view class="goods-right">
+        <view class="goods-title"></view>
+        <view class="goods-price"></view>
+      </view>
+    </navigator>
+  </view>
+
+</view>
+
+<view class="footer">
+  
+</view>

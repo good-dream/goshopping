@@ -20,7 +20,7 @@ Page({
     request({
       url:'/categories'
     }).then(res=>{
-      console.log(res)
+      // console.log(res)
       // 结构出需要渲染的数据
       const {message}=res.data;
 
@@ -31,7 +31,16 @@ Page({
   },
 
   // 导航栏点击时触发
-  handleChange(){}
+  // 点击哪个导航栏就切换到相应的内容渲染
+  // （就是获取到index赋值给索引current，current需要在data中设置）
+
+  handleChange(even){
+    const {index}=event.currentTarget.dataset
+
+    this.setData({
+      current:index
+    })
+  }
 
 
 })

@@ -1,11 +1,7 @@
 
-<view>
+<view class="container">
     <!-- 搜索 -->
-  <view class='search'>
-    <view class='search-input'>
-      <icon type='search' size='16' />搜素
-    </view>
-  </view>
+  <search />
 
   <!-- 分类页内容 -->
   <view class="main">
@@ -27,7 +23,7 @@
     <view class='categorys'>
       <view 
       class="categorys-row"
-      wx:for=""
+      wx:for="{{navs[current].children}}"
       wx:key="{{index}}">
         <!-- 标题 -->
         <view class="categorys-title">
@@ -38,7 +34,17 @@
 
         <!-- 品牌 -->
         <view class="categorys-list">
-        
+          <navigator 
+            url="/pages/search_list/index?keyword={{item.cat_name}}"
+            class='categorys-item'
+            wx:for="{{item.children}}"
+            wx:key="{{index}}">
+            <image 
+            src="{{item.cat_icon}}"
+            mode="aspectFill"></image>
+
+            <view>{{item.cat_name}}</view>
+          </navigator>
         </view>
       </view>
     </view>
