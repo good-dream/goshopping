@@ -52,9 +52,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/category/index",
-					"pathName": "pages/category/index",
-					"query": "",
+					"name": "pages/goods_detail/index",
+					"pathName": "pages/goods_detail/index",
+					"query": "keyword=小米",
 					"scene": null
 				}
 			]

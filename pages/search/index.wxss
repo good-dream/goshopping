@@ -1,0 +1,12 @@
+/* 顶部搜索头样式 */
+.search {
+  padding:20rpx;
+  background:#f6f6f6;
+  display:flex;
+  justify-content: space-between;
+}
+
+.cancel {
+  
+}
+

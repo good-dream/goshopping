@@ -34,7 +34,7 @@ Page({
   // 点击哪个导航栏就切换到相应的内容渲染
   // （就是获取到index赋值给索引current，current需要在data中设置）
 
-  handleChange(even){
+  handleChange(event){
     const {index}=event.currentTarget.dataset
 
     this.setData({
