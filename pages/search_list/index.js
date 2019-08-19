@@ -80,7 +80,7 @@ Page({
 
 
   // 点击单个商品的时候触发
-  // 点击跳转的商品详情页
+  // 点击跳转的商品详情页触发
   // event参数为包装好的
   handleChange(event){
     // 用event.currentTarget.dataset获取事件传递的参数，然后把index解构出来（用了navigator标签跳转页面（url属性）

@@ -1,19 +1,66 @@
-
+<view>
+  <!-- 轮播图 -->
   <swiper 
   class="swiper"
   indicator-dots
   >
   <!-- block是一个伪元素，不会渲染到页面的，一般用于for循环 -->
-    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <block wx:for="{{detail.pics}}" wx:key="{{index}}">
       <swiper-item>
       <!-- model=aspectFill 为自动截取图片的长边 -->
         <image 
-        src="{{item}}" 
+        src="{{item.pics_big}}" 
         class="slide-image" 
         mode="aspectFill" />
       </swiper-item>
     </block>
   </swiper>
 
+  <!-- 商品信息 -->
+  <view class="goods-price">
+    ¥ {{detail.goods_price}}
+  </view>
+
+  <view class="goods-info">
+    <view class="goods-content">
+      {{detail.goods_name}}
+    </view>
+    <view class="goods-star">
+      <view class="iconfont icon-shoucang"></view>
+      <view class="star-text">收藏</view>
+    </view>
+  </view>
+
+  <!-- 商品详情（下面就是商品信息的展示 -->
+  <!-- 用小程序文档中富文本来渲染 -->
+  <rich-text nodes="{{detail.goods_introduce}}"></rich-text>
+
+
+  <!-- 底部栏 -->
+  <view class="footer-bar">
+    <!-- 联系客服 -->
+    <view class="footer-bar-left">
+      <view class='iconfont icon-kefu'></view>
+      <text>联系客服</text> 
+    </view>
+
+    <!-- 当点击联系客服时，该按钮会自动连接到微信自带的客服服务系统 -->
+    <button class="contact" open-type="contact">联系客服</button>
+
+    <!-- 购物车 -->
+    <!-- 在tabbar的页面需要加上open-type="switchTab",跳转到tabbar的指定页面 -->
+    <navigator
+    url="/pages/cart/index"
+    open-type="switchTab"
+    class="footer-bar-left">
+      <view class="iconfont icon-gouwuche"></view>
+      <text>购物车</text>
+    </navigator>
+
+    <!-- 右侧按钮 -->
+    <view class="footer-button">加入购物车</view>
+    <view class="footer-button">立即购买</view>
+  </view>
+</view>
 
   
